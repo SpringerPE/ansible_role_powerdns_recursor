@@ -1,0 +1,15 @@
+---
+- name: Enable EPEL repositories
+#  command: rpm -Uvh --replacepkgs {{ item.repo }}
+  yum: name={{ item.repo }} state=present
+  with_items: PDNS_RECURSOR_REPOS
+  when: PDNS_RECURSOR_REPOS
+  tags:
+         - pdns_recursor_addrepo
+
+- name: Install RPM packages
+  yum: name={{ item.package }} state=latest
+  with_items: PDNS_RECURSOR_PACKAGES
+  when: PDNS_RECURSOR_PACKAGES
+  tags:
+         - pdns_recursor_install

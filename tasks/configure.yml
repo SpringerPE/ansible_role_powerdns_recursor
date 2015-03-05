@@ -1,0 +1,13 @@
+---
+- name: Enabling default configuration
+  template:
+        src=recursor.conf.j2
+        dest={{ PDNS_RECURSOR_CONF }}
+        backup=yes
+        owner=root
+        group=root
+        mode=0644
+  notify:
+        - restart collectd
+  tags:
+        - collectd_configure

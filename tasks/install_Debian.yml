@@ -1,0 +1,14 @@
+---
+#- name: Enable APT repositories
+#  apt_repository: repo='{{ item.repo }}' state=present
+#  with_items: PDNS_RECURSOR_REPOS
+#  when: PDNS_RECURSOR_REPOS
+#  tags:
+#         - pdns_recursor_addrepo
+
+- name: Install DEB packages
+  apt: name={{ item.package }} state=latest update_cache=yes
+  with_items: PDNS_RECURSOR_PACKAGES
+  when: PDNS_RECURSOR_PACKAGES
+  tags:
+         - pdnsrecursor_install

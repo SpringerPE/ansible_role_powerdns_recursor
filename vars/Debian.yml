@@ -1,0 +1,8 @@
+# PDNS_RECURSOR_REPOS:
+# - repo: "deb http://archive.ubuntu.com/ubuntu {{ ansible_distribution_release }} universe"
+# - repo: "deb http://archive.ubuntu.com/ubuntu {{ ansible_distribution_release }}-updates universe"
+
+PDNS_RECURSOR_PACKAGES:
+ - package: "pdns-recursor"
+
+PDNS_RECURSOR_CONF: "/etc/pdns/recursor.conf"
