@@ -1,2 +1,14 @@
 ---
 # handlers file for ansible_role_powerdns_recursor
+
+- name: restart pdns-recursor
+  service: name=pdns-recursor state=restarted enabled=yes
+
+- name: stop pdns-recursor
+  service: name=pdns-recursor state=stopped enabled=yes
+
+- name: start pdns-recursor
+  service: name=pdns-recursor state=started enabled=yes
+
+- name: disable pdns-recursor
+  service: name=pdns-recursor state=stopped enabled=no
