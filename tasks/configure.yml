@@ -8,6 +8,6 @@
         group=root
         mode=0644
   notify:
-        - restart collectd
+        - restart pdns-recursor
   tags:
-        - collectd_configure
+        - pdns_recursor_configure
