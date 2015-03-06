@@ -1,38 +1,31 @@
-Role Name
-=========
+ansible_role_pwerdns_recursor
+=============================
 
-A brief description of the role goes here.
+This role automates setting up a PowerDNS caching server using PowerDNS recursor.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This role is designed to work on EL6, ~~EL7~~, Debian 7 and Ubuntu 14.04
 
 Role Variables
 --------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Vars are used to set values in the config file for the PowerDNS recursor.
+Usable config variables are in defaults/main.yml. For exampe, to configure allow-from you would set powerdns_recursor_allow_from in a var
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+n.a.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+tbd
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
 
-License
--------
-
-BSD
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Carsten Hiort (Springer SBM)
