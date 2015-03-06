@@ -5,4 +5,7 @@
 PDNS_RECURSOR_PACKAGES:
  - package: "pdns-recursor"
 
-PDNS_RECURSOR_CONF: "/etc/pdns/recursor.conf"
+PDNS_RECURSOR_CONF: "/etc/powerdns/recursor.conf"
+PDNS_RECURSOR_CONFDIR: "/etc/powerdns/"
+PDNS_RECURSOR_GID: "pdns"
+PDNS_RECURSOR_UID: "pdns"
