@@ -39,7 +39,6 @@ powerdns_conf:
    query-local-address: "{{ powerdns_recursor_query_local_address | default('0.0.0.0') }}"
    query-local-address6: "{{ powerdns_recursor_query_local_address6 | default('') }}"
    quiet: "{{ powerdns_recursor_quiet | default('yes') }}"
-   remotes-ringbuffer-entries: "{{ powerdns_recursor_remotes_ringbuffer_entries | default('0') }}"
    serve-rfc1918: "{{ powerdns_recursor_serve_rfc1918 | default('') }}"
    server-id: "{{ powerdns_recursor_server_id | default('') }}"
    setgid: "{{ PDNS_RECURSOR_GID }}"
