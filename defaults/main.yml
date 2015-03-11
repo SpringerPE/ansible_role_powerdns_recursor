@@ -6,6 +6,7 @@ powerdns_conf:
    allow-from-file: "{{ powerdns_recursor_allow_from_file | default('') }}"
    auth-zones: "{{ powerdns_recursor_auth_zones | default('') }}"
    chroot: "{{ powerdns_recursor_chroot | default('') }}"
+   carbon-server: "{{ powerdns_recursor_carbon_server | default('') }}"
    client-tcp-timeout: "{{ powerdns_recursor_client_tcp_timeout | default('2') }}"
    config-dir: "{{ PDNS_RECURSOR_CONFDIR }}"
    daemon: "{{ powerdns_recursor_daemon | default('yes') }}"
