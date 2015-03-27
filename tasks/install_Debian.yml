@@ -6,9 +6,19 @@
 #  tags:
 #         - pdns_recursor_addrepo
 
-- name: Install DEB packages
-  apt: name={{ item.package }} state=latest update_cache=yes
-  with_items: PDNS_RECURSOR_PACKAGES
-  when: PDNS_RECURSOR_PACKAGES
-  tags:
-         - pdnsrecursor_install
+#- name: Install DEB packages
+#  apt: name={{ item.package }} state=latest update_cache=yes
+#  with_items: PDNS_RECURSOR_PACKAGES
+#  when: PDNS_RECURSOR_PACKAGES
+#  tags:
+#         - pdnsrecursor_install
+
+- name: Download pdns_recursor based on variable url and deb pkg
+  get_url:
+    url:            "{{ pdns_recursor_url }}{{ pdns_recursor_deb }}"
+    dest:           /tmp/{{ pdns_recursor_deb }}
+    validate_certs: no
+
+- name: Install just downloaded pdns_recursor package (leave downloaded package otherwise a redownload will take place)
+  apt:
+    deb: /tmp/{{ pdns_recursor_deb }}
