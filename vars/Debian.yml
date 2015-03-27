@@ -2,10 +2,10 @@
 # - repo: "deb http://archive.ubuntu.com/ubuntu {{ ansible_distribution_release }} universe"
 # - repo: "deb http://archive.ubuntu.com/ubuntu {{ ansible_distribution_release }}-updates universe"
 
-PDNS_RECURSOR_PACKAGES:
- - package: "pdns-recursor"
-
+pdns_recursor_url: "https://downloads.powerdns.com/releases/deb/"
+pdns_recursol_deb: "pdns-recursor_3.7.1-1_amd64.deb"
 PDNS_RECURSOR_CONF: "/etc/powerdns/recursor.conf"
 PDNS_RECURSOR_CONFDIR: "/etc/powerdns/"
 PDNS_RECURSOR_GID: "pdns"
 PDNS_RECURSOR_UID: "pdns"
+
