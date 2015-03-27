@@ -13,6 +13,10 @@
 #  tags:
 #         - pdnsrecursor_install
 
+- group: name=pdns state=present
+
+- user: name=pdns group=pdns
+
 - name: Download pdns_recursor based on variable url and deb pkg
   get_url:
     url:            "{{ pdns_recursor_url }}{{ pdns_recursor_deb }}"
@@ -22,3 +26,4 @@
 - name: Install just downloaded pdns_recursor package (leave downloaded package otherwise a redownload will take place)
   apt:
     deb: /tmp/{{ pdns_recursor_deb }}
+
