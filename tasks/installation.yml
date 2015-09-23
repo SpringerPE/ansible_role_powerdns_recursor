@@ -1,0 +1,10 @@
+---
+- group: name=pdns state=present
+
+- user: name=pdns group=pdns
+
+- name: Install pdns_recursor package 
+  apt:
+	pkg=pdns-recursor
+	state=present
+

@@ -2,15 +2,20 @@
 # tasks file for ansible_role_powerdns_recursor
 
 # Specific variables
-- name: Loading the OS specific variables
-  include_vars: "{{ item | basename }}"
-  with_first_found:
-    - files:
-        - "{{ ansible_os_family }}_{{ ansible_distribution_version | int }}.yml"
-        - "{{ ansible_os_family }}.yml"
-      paths:
-        - "../vars"
-        - "."
+- name: Fail unless Ubuntu version is 14.04 (Trusty)
+  fail: msg="This role was not tested on {{ ansible_distribution }} {{ ansible_distribution_version }}"
+  when: ansible_distribution != 'Ubuntu' or ansible_distribution_version | version_compare('14.04', '!=')
+
+
+#- name: Loading the OS specific variables
+#  include_vars: "{{ item | basename }}"
+#  with_first_found:
+#    - files:
+#        - "{{ ansible_os_family }}_{{ ansible_distribution_version | int }}.yml"
+#        - "{{ ansible_os_family }}.yml"
+#      paths:
+#        - "../vars"
+#        - "."
 
 
 # Install packages

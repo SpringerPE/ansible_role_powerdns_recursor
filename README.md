@@ -6,7 +6,7 @@ This role automates setting up a PowerDNS caching server using PowerDNS recursor
 Requirements
 ------------
 
-This role is designed to work on EL6, ~~EL7~~, Debian 7 and Ubuntu 14.04 (EL 7 currently untested due to issues with Vagrant)
+Ubuntu 14.04
 
 Role Variables
 --------------

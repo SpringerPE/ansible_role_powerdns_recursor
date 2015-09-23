@@ -1,8 +1,404 @@
-# {{ ansible_managed }}
-#########################
+#################################
+# allow-from
+#
+{% if powerdns_recursor_allow_from is defined %}allow-from={{ powerdns_recursor_allow_from }} {% else %}# allow-from=127.0.0.0/8, 10.0.0.0/8, 100.64.0.0/10, 169.254.0.0/16, 192.168.0.0/16, 172.16.0.0/12, ::1/128, fc00::/7, fe80::/10{%endif%}
 
-{% for (key, value) in powerdns_conf.iteritems() %}
-{% if not value=='' %}
-  {{ key }}={{ value }}
-{% endif %}
-{% endfor %}
+#################################
+# allow-from-file
+#
+{% if powerdns_recursor_allow_from_file is defined %}allow-from-file={{ powerdns_recursor_allow_from_file }} {% else %}# allow-from-file={%endif%}
+
+#################################
+# any-to-tcp
+#
+{% if powerdns_recursor_any_to_tcp is defined %}any-to-tcp={{ powerdns_recursor_any_to_tcp }} {% else %}# any-to-tcp=no{%endif%}
+
+#################################
+# auth-zones
+#
+{% if powerdns_recursor_auth_zones is defined %}auth-zones={{ powerdns_recursor_auth_zones }} {% else %}# auth-zones={%endif%}
+
+#################################
+# carbon-interval
+#
+{% if powerdns_recursor_carbon_interval is defined %}carbon-interval={{ powerdns_recursor_carbon_interval }} {% else %}# carbon-interval=30{%endif%}
+
+#################################
+# carbon-ourname
+#
+{% if powerdns_recursor_carbon_ourname is defined %}carbon-ourname={{ powerdns_recursor_carbon_ourname }} {% else %}# carbon-ourname={%endif%}
+
+#################################
+# carbon-server
+#
+{% if powerdns_recursor_carbon_server is defined %}carbon-server={{ powerdns_recursor_carbon_server }} {% else %}# carbon-server={%endif%}
+
+#################################
+# chroot
+#
+{% if powerdns_recursor_chroot is defined %}chroot={{ powerdns_recursor_chroot }} {% else %}# chroot={%endif%}
+
+#################################
+# client-tcp-timeout
+#
+{% if powerdns_recursor_client_tcp_timeout is defined %}client-tcp-timeout={{ powerdns_recursor_client_tcp_timeout }} {% else %}# client-tcp-timeout=2{%endif%}
+
+#################################
+# config-dir
+#
+{% if powerdns_recursor_config_dir is defined %}config-dir={{ powerdns_recursor_config_dir }} {% else %}# config-dir=/etc/powerdns/{%endif%}
+
+#################################
+# config-name
+#
+{% if powerdns_recursor_config_name is defined %}config-name={{ powerdns_recursor_config_name }} {% else %}# config-name={%endif%}
+
+#################################
+# daemon
+#
+{% if powerdns_recursor_daemon is defined %}daemon={{ powerdns_recursor_daemon }} {% else %}# daemon=yes{%endif%}
+
+#################################
+# delegation-only
+#
+{% if powerdns_recursor_delegation_only is defined %}delegation-only={{ powerdns_recursor_delegation_only }} {% else %}# delegation-only={%endif%}
+
+#################################
+# disable-edns
+#
+{% if powerdns_recursor_disable_edns is defined %}disable-edns={{ powerdns_recursor_disable_edns }} {% else %}# disable-edns={%endif%}
+
+#################################
+# disable-packetcache
+#
+{% if powerdns_recursor_disable_packetcache is defined %}disable-packetcache={{ powerdns_recursor_disable_packetcache }} {% else %}# disable-packetcache=no{%endif%}
+
+#################################
+# dont-query
+#
+{% if powerdns_recursor_dont_query is defined %}dont-query={{ powerdns_recursor_dont_query }} {% else %}# dont-query=127.0.0.0/8, 10.0.0.0/8, 100.64.0.0/10, 169.254.0.0/16, 192.168.0.0/16, 172.16.0.0/12, ::1/128, fc00::/7, fe80::/10, 0.0.0.0/8, 192.0.0.0/24, 192.0.2.0/24, 198.51.100.0/24, 203.0.113.0/24, 240.0.0.0/4, ::/96, ::ffff:0:0/96, 100::/64, 2001:db8::/32{%endif%}
+
+#################################
+# entropy-source
+#
+{% if powerdns_recursor_entropy_source is defined %}entropy-source={{ powerdns_recursor_entropy_source }} {% else %}# entropy-source=/dev/urandom{%endif%}
+
+#################################
+# etc-hosts-file
+#
+{% if powerdns_recursor_etc_hosts_file is defined %}etc-hosts-file={{ powerdns_recursor_etc_hosts_file }} {% else %}# etc-hosts-file=/etc/hosts{%endif%}
+
+#################################
+# experimental-api-config-dir
+#
+{% if powerdns_recursor_experimental_api_config_dir is defined %}experimental-api-config-dir={{ powerdns_recursor_experimental_api_config_dir }} {% else %}# experimental-api-config-dir={%endif%}
+
+#################################
+# experimental-api-key
+#
+{% if powerdns_recursor_experimental_api_key is defined %}experimental-api-key={{ powerdns_recursor_experimental_api_key }} {% else %}# experimental-api-key={%endif%}
+
+#################################
+# experimental-api-readonly
+#
+{% if powerdns_recursor_experimental_api_readonly is defined %}experimental-api-readonly={{ powerdns_recursor_experimental_api_readonly }} {% else %}# experimental-api-readonly=no{%endif%}
+
+#################################
+# experimental-logfile
+#
+{% if powerdns_recursor_experimental_logfile is defined %}experimental-logfile={{ powerdns_recursor_experimental_logfile }} {% else %}# experimental-logfile=/var/log/pdns.log{%endif%}
+
+#################################
+# experimental-webserver
+#
+{% if powerdns_recursor_experimental_webserver is defined %}experimental-webserver={{ powerdns_recursor_experimental_webserver }} {% else %}# experimental-webserver=no{%endif%}
+
+#################################
+# experimental-webserver-address
+#
+{% if powerdns_recursor_experimental_webserver_address is defined %}experimental-webserver-address={{ powerdns_recursor_experimental_webserver_address }} {% else %}# experimental-webserver-address=127.0.0.1{%endif%}
+
+#################################
+# experimental-webserver-password
+#
+{% if powerdns_recursor_experimental_webserver_password is defined %}experimental-webserver-password={{ powerdns_recursor_experimental_webserver_password }} {% else %}# experimental-webserver-password={%endif%}
+
+#################################
+# experimental-webserver-port
+#
+{% if powerdns_recursor_experimental_webserver_port is defined %}experimental-webserver-port={{ powerdns_recursor_experimental_webserver_port }} {% else %}# experimental-webserver-port=8082{%endif%}
+
+#################################
+# export-etc-hosts
+#
+{% if powerdns_recursor_export_etc_hosts is defined %}export-etc-hosts={{ powerdns_recursor_export_etc_hosts }} {% else %}# export-etc-hosts=off{%endif%}
+
+#################################
+# export-etc-hosts-search-suffix
+#
+{% if powerdns_recursor_export_etc_hosts_search_suffix is defined %}export-etc-hosts-search-suffix={{ powerdns_recursor_export_etc_hosts_search_suffix }} {% else %}# export-etc-hosts-search-suffix={%endif%}
+
+#################################
+# forward-zones
+#
+{% if powerdns_recursor_forward_zones is defined %}forward-zones={{ powerdns_recursor_forward_zones }} {% else %}# forward-zones={%endif%}
+
+#################################
+# forward-zones-file
+#
+{% if powerdns_recursor_forward_zones_file is defined %}forward-zones-file={{ powerdns_recursor_forward_zones_file }} {% else %}# forward-zones-file={%endif%}
+
+#################################
+# forward-zones-recurse
+#
+{% if powerdns_recursor_forward_zones_recurse is defined %}forward-zones-recurse={{ powerdns_recursor_forward_zones_recurse }} {% else %}# forward-zones-recurse={%endif%}
+
+#################################
+# hint-file
+#
+{% if powerdns_recursor_hint_file is defined %}hint-file={{ powerdns_recursor_hint_file }} {% else %}# hint-file={%endif%}
+
+#################################
+# include-dir
+#
+{% if powerdns_recursor_include_dir is defined %}include-dir={{ powerdns_recursor_include_dir }} {% else %}# include-dir={%endif%}
+
+#################################
+# latency-statistic-size
+#
+{% if powerdns_recursor_latency_statistic_size is defined %}latency-statistic-size={{ powerdns_recursor_latency_statistic_size }} {% else %}# latency-statistic-size=10000{%endif%}
+
+#################################
+# local-address
+#
+{% if powerdns_recursor_local_address is defined %}local-address={{ powerdns_recursor_local_address }} {% else %}# local-address=127.0.0.1{%endif%}
+
+#################################
+# local-port
+#
+{% if powerdns_recursor_local_port is defined %}local-port={{ powerdns_recursor_local_port }} {% else %}# local-port=53{%endif%}
+
+#################################
+# log-common-errors
+#
+{% if powerdns_recursor_log_common_errors is defined %}log-common-errors={{ powerdns_recursor_log_common_errors }} {% else %}# log-common-errors=yes{%endif%}
+
+#################################
+# logging-facility
+#
+{% if powerdns_recursor_logging_facility is defined %}logging-facility={{ powerdns_recursor_logging_facility }} {% else %}# logging-facility={%endif%}
+
+#################################
+# loglevel
+#
+{% if powerdns_recursor_loglevel is defined %}loglevel={{ powerdns_recursor_loglevel }} {% else %}# loglevel=4{%endif%}
+
+#################################
+# lua-dns-script
+#
+{% if powerdns_recursor_lua_dns_script is defined %}lua-dns-script={{ powerdns_recursor_lua_dns_script }} {% else %}# lua-dns-script={%endif%}
+
+#################################
+# max-cache-entries
+#
+{% if powerdns_recursor_max_cache_entries is defined %}max-cache-entries={{ powerdns_recursor_max_cache_entries }} {% else %}# max-cache-entries=1000000{%endif%}
+
+#################################
+# max-cache-ttl
+#
+{% if powerdns_recursor_max_cache_ttl is defined %}max-cache-ttl={{ powerdns_recursor_max_cache_ttl }} {% else %}# max-cache-ttl=86400{%endif%}
+
+#################################
+# max-mthreads
+#
+{% if powerdns_recursor_max_mthreads is defined %}max-mthreads={{ powerdns_recursor_max_mthreads }} {% else %}# max-mthreads=2048{%endif%}
+
+#################################
+# max-negative-ttl
+#
+{% if powerdns_recursor_max_negative_ttl is defined %}max-negative-ttl={{ powerdns_recursor_max_negative_ttl }} {% else %}# max-negative-ttl=3600{%endif%}
+
+#################################
+# max-packetcache-entries
+#
+{% if powerdns_recursor_max_packetcache_entries is defined %}max-packetcache-entries={{ powerdns_recursor_max_packetcache_entries }} {% else %}# max-packetcache-entries=500000{%endif%}
+
+#################################
+# max-qperq
+#
+{% if powerdns_recursor_max_qperq is defined %}max-qperq={{ powerdns_recursor_max_qperq }} {% else %}# max-qperq=50{%endif%}
+
+#################################
+# max-tcp-clients
+#
+{% if powerdns_recursor_max_tcp_clients is defined %}max-tcp-clients={{ powerdns_recursor_max_tcp_clients }} {% else %}# max-tcp-clients=128{%endif%}
+
+#################################
+# max-tcp-per-client
+#
+{% if powerdns_recursor_max_tcp_per_client is defined %}max-tcp-per-client={{ powerdns_recursor_max_tcp_per_client }} {% else %}# max-tcp-per-client=0{%endif%}
+
+#################################
+# max-total-msec
+#
+{% if powerdns_recursor_max_total_msec is defined %}max-total-msec={{ powerdns_recursor_max_total_msec }} {% else %}# max-total-msec=7000{%endif%}
+
+#################################
+# minimum-ttl-override
+#
+{% if powerdns_recursor_minimum_ttl_override is defined %}minimum-ttl-override={{ powerdns_recursor_minimum_ttl_override }} {% else %}# minimum-ttl-override=0{%endif%}
+
+#################################
+# network-timeout
+#
+{% if powerdns_recursor_network_timeout is defined %}network-timeout={{ powerdns_recursor_network_timeout }} {% else %}# network-timeout=1500{%endif%}
+
+#################################
+# no-shuffle
+#
+{% if powerdns_recursor_no_shuffle is defined %}no-shuffle={{ powerdns_recursor_no_shuffle }} {% else %}# no-shuffle=off{%endif%}
+
+#################################
+# packetcache-servfail-ttl
+#
+{% if powerdns_recursor_packetcache_servfail_ttl is defined %}packetcache-servfail-ttl={{ powerdns_recursor_packetcache_servfail_ttl }} {% else %}# packetcache-servfail-ttl=60{%endif%}
+
+#################################
+# packetcache-ttl
+#
+{% if powerdns_recursor_packetcache_ttl is defined %}packetcache-ttl={{ powerdns_recursor_packetcache_ttl }} {% else %}# packetcache-ttl=3600{%endif%}
+
+#################################
+# pdns-distributes-queries
+#
+{% if powerdns_recursor_pdns_distributes_queries is defined %}pdns-distributes-queries={{ powerdns_recursor_pdns_distributes_queries }} {% else %}# pdns-distributes-queries={%endif%}
+
+#################################
+# processes
+#
+{% if powerdns_recursor_processes is defined %}processes={{ powerdns_recursor_processes }} {% else %}# processes=1{%endif%}
+
+#################################
+# query-local-address
+#
+{% if powerdns_recursor_query_local_address is defined %}query-local-address={{ powerdns_recursor_query_local_address }} {% else %}# query-local-address=0.0.0.0{%endif%}
+
+#################################
+# query-local-address6
+#
+{% if powerdns_recursor_query_local_address6 is defined %}query-local-address6={{ powerdns_recursor_query_local_address6 }} {% else %}# query-local-address6={%endif%}
+
+#################################
+# quiet
+#
+{% if powerdns_recursor_quiet is defined %}quiet={{ powerdns_recursor_quiet }} {% else %}# quiet={%endif%}
+
+#################################
+# root-nx-trust
+#
+{% if powerdns_recursor_root_nx_trust is defined %}root-nx-trust={{ powerdns_recursor_root_nx_trust }} {% else %}# root-nx-trust=no{%endif%}
+
+#################################
+# security-poll-suffix
+#
+{% if powerdns_recursor_security_poll_suffix is defined %}security-poll-suffix={{ powerdns_recursor_security_poll_suffix }} {% else %}# security-poll-suffix=secpoll.powerdns.com.{%endif%}
+
+#################################
+# serve-rfc1918
+#
+{% if powerdns_recursor_serve_rfc1918 is defined %}serve-rfc1918={{ powerdns_recursor_serve_rfc1918 }} {% else %}# serve-rfc1918={%endif%}
+
+#################################
+# server-down-max-fails
+#
+{% if powerdns_recursor_server_down_max_fails is defined %}server-down-max-fails={{ powerdns_recursor_server_down_max_fails }} {% else %}# server-down-max-fails=64{%endif%}
+
+#################################
+# server-down-throttle-time
+#
+{% if powerdns_recursor_server_down_throttle_time is defined %}server-down-throttle-time={{ powerdns_recursor_server_down_throttle_time }} {% else %}# server-down-throttle-time=60{%endif%}
+
+#################################
+# server-id
+#
+{% if powerdns_recursor_server_id is defined %}server-id={{ powerdns_recursor_server_id }} {% else %}# server-id={%endif%}
+
+#################################
+# setgid
+#
+{% if powerdns_recursor_setgid is defined %}setgid={{ powerdns_recursor_setgid }} {% else %}# setgid={%endif%}
+
+#################################
+# setuid
+#
+{% if powerdns_recursor_setuid is defined %}setuid={{ powerdns_recursor_setuid }} {% else %}# setuid={%endif%}
+
+#################################
+# single-socket
+#
+{% if powerdns_recursor_single_socket is defined %}single-socket={{ powerdns_recursor_single_socket }} {% else %}# single-socket=off{%endif%}
+
+#################################
+# soa-minimum-ttl
+#
+{% if powerdns_recursor_soa_minimum_ttl is defined %}soa-minimum-ttl={{ powerdns_recursor_soa_minimum_ttl }} {% else %}# soa-minimum-ttl=0{%endif%}
+
+#################################
+# socket-dir
+#
+{% if powerdns_recursor_socket_dir is defined %}socket-dir={{ powerdns_recursor_socket_dir }} {% else %}# socket-dir=/var/run/{%endif%}
+
+#################################
+# socket-group
+#
+{% if powerdns_recursor_socket_group is defined %}socket-group={{ powerdns_recursor_socket_group }} {% else %}# socket-group={%endif%}
+
+#################################
+# socket-mode
+#
+{% if powerdns_recursor_socket_mode is defined %}socket-mode={{ powerdns_recursor_socket_mode }} {% else %}# socket-mode={%endif%}
+
+#################################
+# socket-owner
+#
+{% if powerdns_recursor_socket_owner is defined %}socket-owner={{ powerdns_recursor_socket_owner }} {% else %}# socket-owner={%endif%}
+
+#################################
+# spoof-nearmiss-max
+#
+{% if powerdns_recursor_spoof_nearmiss_max is defined %}spoof-nearmiss-max={{ powerdns_recursor_spoof_nearmiss_max }} {% else %}# spoof-nearmiss-max=20{%endif%}
+
+#################################
+# stack-size
+#
+{% if powerdns_recursor_stack_size is defined %}stack-size={{ powerdns_recursor_stack_size }} {% else %}# stack-size=200000{%endif%}
+
+#################################
+# stats-ringbuffer-entries
+#
+{% if powerdns_recursor_stats_ringbuffer_entries is defined %}stats-ringbuffer-entries={{ powerdns_recursor_stats_ringbuffer_entries }} {% else %}# stats-ringbuffer-entries=10000{%endif%}
+
+#################################
+# threads
+#
+{% if powerdns_recursor_threads is defined %}threads={{ powerdns_recursor_threads }} {% else %}# threads=2{%endif%}
+
+#################################
+# trace
+#
+{% if powerdns_recursor_trace is defined %}trace={{ powerdns_recursor_trace }} {% else %}# trace=off{%endif%}
+
+#################################
+# udp-truncation-threshold
+#
+{% if powerdns_recursor_udp_truncation_threshold is defined %}udp-truncation-threshold={{ powerdns_recursor_udp_truncation_threshold }} {% else %}# udp-truncation-threshold=1680{%endif%}
+
+#################################
+# version-string
+#
+{% if powerdns_recursor_version_string is defined %}version-string={{ powerdns_recursor_version_string }} {% else %}# version-string=PowerDNS Recursor 3.7.3 (jenkins@autotest.powerdns.com built 20150609121259 root@autotest.powerdns.com){%endif%}
+
+#################################
+# webserver-allow-from
+#
+{% if powerdns_recursor_webserver_allow_from is defined %}webserver-allow-from={{ powerdns_recursor_webserver_allow_from }} {% else %}# webserver-allow-from=0.0.0.0/0,::/0{%endif%}
